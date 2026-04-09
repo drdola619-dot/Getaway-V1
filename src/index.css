@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-thai: "IBM Plex Sans Thai", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sora: "Sora", sans-serif;
+
+  --color-bg: #0c0e14;
+  --color-surface: #141722;
+  --color-surface2: #1a1f2e;
+  --color-border: #242a3d;
+  --color-border-active: #3b5bdb;
+  --color-accent: #4c6ef5;
+  --color-accent-glow: rgba(76, 110, 245, 0.25);
+  --color-green: #40c057;
+  --color-green-glow: rgba(64, 192, 87, 0.2);
+  --color-red: #fa5252;
+  --color-orange: #fd7e14;
+  --color-gold: #fab005;
+  --color-text: #e8eaf0;
+  --color-text2: #8b92a8;
+  --color-text3: #555d78;
+
+  --radius-custom: 14px;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-thai min-h-screen overflow-x-hidden;
+  }
+
+  body::before {
+    content: '';
+    @apply fixed top-[-200px] left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none z-0;
+    background: radial-gradient(ellipse, rgba(76, 110, 245, 0.08) 0%, transparent 70%);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-custom {
+  animation: spin 1s linear infinite;
+}
+
